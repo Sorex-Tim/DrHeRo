@@ -32,7 +32,7 @@ export function About() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-6 relative">
-            <div className="relative aspect-[5/3] max-w-2xl mx-auto lg:mx-0 overflow-hidden rounded-[32px] bg-navy-100 shadow-[0_40px_80px_-40px_rgba(15,24,57,0.45)]">
+            <div className="relative aspect-[9/4] max-w-2xl mx-auto lg:mx-0 overflow-hidden rounded-[32px] bg-navy-100 shadow-[0_40px_80px_-40px_rgba(15,24,57,0.45)]">
               <Image
                 src="/team/gruppe.webp"
                 alt="Driefmeier, Heidrich und Roth – das Team von Dr HeRo"

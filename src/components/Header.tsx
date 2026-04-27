@@ -27,7 +27,6 @@ const NAV: NavItem[] = [
       { label: "Häuser kaufen", href: "/immobilien", description: "Eigenheime in der Region" },
       { label: "Wohnungen kaufen", href: "/immobilien", description: "Eigentumswohnungen finden" },
       { label: "Grundstücke", href: "/immobilien", description: "Bauland & Investments" },
-      { label: "Gewerbe", href: "/immobilien", description: "Büros, Praxen, Hallen" },
     ],
   },
   {
@@ -40,18 +39,8 @@ const NAV: NavItem[] = [
     ],
   },
   { label: "Bewerten", href: "/#bewertung" },
-  { label: "Finanzieren", href: "/#leistungen" },
   { label: "Vorsorge", href: "/vorsorgeplanung" },
-  {
-    label: "Über uns",
-    href: "#about",
-    children: [
-      { label: "Unser Team", href: "#about", description: "Lernen Sie uns kennen" },
-      { label: "Referenzen", href: "#referenzen", description: "Was Kunden sagen" },
-      { label: "Karriere", href: "#about", description: "Werde Teil von Dr HeRo" },
-    ],
-  },
-  { label: "Wissen", href: "#faq" },
+  { label: "Über uns", href: "#about" },
 ];
 
 export function Header() {
