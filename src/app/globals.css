@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #0f1839;
+
+  --color-navy-50: #eef0f7;
+  --color-navy-100: #d6dbe9;
+  --color-navy-200: #a9b3cd;
+  --color-navy-300: #6c7aa3;
+  --color-navy-500: #2a3870;
+  --color-navy-700: #1a2657;
+  --color-navy-800: #131e47;
+  --color-navy-900: #0f1839;
+
+  --color-brand-50: #fff4ee;
+  --color-brand-100: #ffe6d6;
+  --color-brand-200: #ffc8a3;
+  --color-brand-400: #fb8a4f;
+  --color-brand-500: #f26b36;
+  --color-brand-600: #e25a26;
+  --color-brand-700: #b8451c;
+
+  --color-cream: #fff7f1;
+  --color-line: #ecedf2;
+
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  border-color: var(--color-line);
+}
+
+::selection {
+  background: var(--color-brand-500);
+  color: #fff;
+}
+
+/* Default: instant anchor jumps so users don't get scrolled across the entire page on every click. Smooth scrolling is applied programmatically only where it makes sense. */
+html {
+  scroll-behavior: auto;
+  scroll-padding-top: 96px; /* sticky header offset for hash navigation */
+}
+
+/* Card hover lift utility */
+@utility card-hover {
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    border-color 200ms ease;
+}
+@utility card-hover-active {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px -22px rgba(15, 24, 57, 0.25);
+}
+
+/* Hero blob background */
+.hero-blob {
+  position: absolute;
+  inset: auto -10% -30% -10%;
+  height: 70%;
+  background:
+    radial-gradient(60% 80% at 20% 30%, rgba(242, 107, 54, 0.18), transparent 60%),
+    radial-gradient(50% 70% at 90% 10%, rgba(15, 24, 57, 0.08), transparent 60%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
 }
